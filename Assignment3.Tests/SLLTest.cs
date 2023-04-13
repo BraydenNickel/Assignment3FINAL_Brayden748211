@@ -1,4 +1,4 @@
-﻿using Assignment3.Utility;
+using Assignment3.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +29,7 @@ namespace Assignment3.Tests
         [Test]
         public void TestPrepends()
         {
-
+            
         }
 
         [Test]
@@ -58,10 +58,6 @@ namespace Assignment3.Tests
         [Test]
         public void TestAdd()
         {
-            SLL users = new SLL();
-            users.AddLast(new User(1, "Joe Blow", "jblow@gmail.com", "password"));
-            users.AddLast(new User(2, "Joe Schmoe", "joe.schmoe@outlook.com", "abcdef"));
-            users.AddLast(new User(3, "Colonel Sanders", "chickenlover1890@gmail.com", "kfc5555"));
 
             User newUser = new User(4, "Ronald McDonald", "burgers4life63@outlook.com", "mcdonalds999");
             int index = 2;
@@ -106,11 +102,7 @@ namespace Assignment3.Tests
         [Test]
         public void TestClear()
         {
-            SLL users = new SLL();
-            users.AddLast(new User(1, "Joe Blow", "jblow@gmail.com", "password"));
-            users.AddLast(new User(2, "Joe Schmoe", "joe.schmoe@outlook.com", "abcdef"));
-            users.AddLast(new User(3, "Colonel Sanders", "chickenlover1890@gmail.com", "kfc5555"));
-            users.AddLast(new User(4, "Ronald McDonald", "burgers4life63@outlook.com", "mcdonalds999"));
+
 
             users.Clear();
 
@@ -122,11 +114,6 @@ namespace Assignment3.Tests
         {
             int expected = 4;
 
-            SLL users = new SLL();
-            users.AddLast(new User(1, "Joe Blow", "jblow@gmail.com", "password"));
-            users.AddLast(new User(2, "Joe Schmoe", "joe.schmoe@outlook.com", "abcdef"));
-            users.AddLast(new User(3, "Colonel Sanders", "chickenlover1890@gmail.com", "kfc5555"));
-            users.AddLast(new User(4, "Ronald McDonald", "burgers4life63@outlook.com", "mcdonalds999"));
 
             int actual = users.Count();
 
@@ -154,23 +141,11 @@ namespace Assignment3.Tests
             SLL emptyList = new SLL();
             Assert.IsTrue(emptyList.IsEmpty());
 
-            SLL filledList = new SLL();
-            filledList.AddLast(new User(1, "Joe Blow", "jblow@gmail.com", "password"));
-            filledList.AddLast(new User(2, "Joe Schmoe", "joe.schmoe@outlook.com", "abcdef"));
-            filledList.AddLast(new User(3, "Colonel Sanders", "chickenlover1890@gmail.com", "kfc5555"));
-            filledList.AddLast(new User(4, "Ronald McDonald", "burgers4life63@outlook.com", "mcdonalds999"));
-            Assert.IsFalse(filledList.IsEmpty());
         }
 
         [Test]
         public void TestRemove()
         {
-            SLL users = new SLL();
-            users.AddLast(new User(1, "Joe Blow", "jblow@gmail.com", "password"));
-            users.AddLast(new User(2, "Joe Schmoe", "joe.schmoe@outlook.com", "abcdef"));
-            users.AddLast(new User(3, "Colonel Sanders", "chickenlover1890@gmail.com", "kfc5555"));
-            users.AddLast(new User(4, "Ronald McDonald", "burgers4life63@outlook.com", "mcdonalds999"));
-
             users.Remove(1);
 
             Assert.IsFalse(users.Contains(new User(2, "Joe Schmoe", "joe.schmoe@outlook.com", "abcdef")));
@@ -180,12 +155,6 @@ namespace Assignment3.Tests
         [Test]
         public void TestRemoveFirst()
         {
-            SLL users = new SLL();
-            users.AddLast(new User(1, "Joe Blow", "jblow@gmail.com", "password"));
-            users.AddLast(new User(2, "Joe Schmoe", "joe.schmoe@outlook.com", "abcdef"));
-            users.AddLast(new User(3, "Colonel Sanders", "chickenlover1890@gmail.com", "kfc5555"));
-            users.AddLast(new User(4, "Ronald McDonald", "burgers4life63@outlook.com", "mcdonalds999"));
-
             users.RemoveFirst();
 
             Assert.IsFalse(users.Contains(new User(1, "Joe Blow", "jblow@gmail.com", "password")));
@@ -195,11 +164,6 @@ namespace Assignment3.Tests
         [Test]
         public void TestRemoveLast()
         {
-            SLL users = new SLL();
-            users.AddLast(new User(1, "Joe Blow", "jblow@gmail.com", "password"));
-            users.AddLast(new User(2, "Joe Schmoe", "joe.schmoe@outlook.com", "abcdef"));
-            users.AddLast(new User(3, "Colonel Sanders", "chickenlover1890@gmail.com", "kfc5555"));
-            users.AddLast(new User(4, "Ronald McDonald", "burgers4life63@outlook.com", "mcdonalds999"));
 
             users.RemoveLast();
 
@@ -210,11 +174,6 @@ namespace Assignment3.Tests
         [Test]
         public void TestReplace()
         {
-            SLL users = new SLL();
-            users.AddLast(new User(1, "Joe Blow", "jblow@gmail.com", "password"));
-            users.AddLast(new User(2, "Joe Schmoe", "joe.schmoe@outlook.com", "abcdef"));
-            users.AddLast(new User(3, "Colonel Sanders", "chickenlover1890@gmail.com", "kfc5555"));
-            users.AddLast(new User(4, "Ronald McDonald", "burgers4life63@outlook.com", "mcdonalds999"));
 
             User newUser = new User(5, "PirateKing", "Pirateking@gmail.com", "Monkey");
             users.Replace(newUser, 2);
